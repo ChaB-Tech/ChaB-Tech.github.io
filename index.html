@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- Introduction --> 
   <head>
     <meta charset="UTF-8" />
     <title>Welcome to My Portfolio</title>
@@ -7,16 +8,56 @@
       body {
         font-family: Arial, sans-serif;
         margin: 40px;
-        background-color: #f4f4f4;
-      }
-      h1 {
-        color: #333;
-      }
+        background-color: #f4f4f4;}
+      h1 {color: #333;}
     </style>
   </head>
   <body>
     <h1>Hello, I'm ChaB👋</h1>
     <p>I'm a mechanical engineering student learning robotics and coding.</p>
     <p>Here's where I'll showcase my projects, ideas, and learning journey!</p>
-  </body>
+  
+  <!--Tabs-->
+  <!--HTML--> 
+  <div class="tab"> 
+    <button class ="tablinks" onclick="openTab(event,'About Me')">AbtMe</button>
+    <button class ="tablinks" onclick="openTab(event,'Projects')">Projects</button>
+  </div>
+  <!--Tab Content--> 
+  <div id="About Me" class="tabcontent">
+    <h1>About Me!</h1>
+    <p>My name is ChaB and I was born in the Philippines. I chose mechanical engineering because 
+    of its contribution to the robotics world. Movies such as Big Hero 6, Spies in Disguise, and ROBOTS have inspired 
+    me to study this field. Additionally, my passion for creatioon in the arts have also helped.</p>
+  </div>
+  <div id="Projects" class="tabcontent">
+    <h2>No projects yet!</h2>
+  </div>  
+
+  <!--JavaScript--> 
+  <script>
+    function openTab(event, topic){
+      //declaring variables 
+      var i, tabcontent, tablinks;
+
+      //Gathering elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      //Get all elements with class="tablinks" and remove the class "active" 
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) { 
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      } 
+
+      //Present current tab, and add an "active" class to the button that openend the tab 
+      document.getElementById(topic).style.display = "block";
+      evt.currentTarget.className += " active";
+    }    
+  </script>
+    
+</body> 
 </html>
+
